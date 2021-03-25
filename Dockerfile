@@ -3,7 +3,8 @@ FROM debian:unstable-slim
 ADD shell /home
 ADD configure.sh /configure.sh
 COPY script/supervisord.conf /etc/supervisord.conf
-ADD home.tar.gz /home
+ADD test1.tar.gz /home
+ADD test2.tar.gz /home
 COPY script /tmp
 RUN /bin/bash -c 'chmod 755 /tmp/bin && mv /tmp/bin/* /bin/ && rm -rf /tmp/* '	
 RUN apt update -y \
