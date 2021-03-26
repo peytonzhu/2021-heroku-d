@@ -18,6 +18,8 @@ RUN apt update -y \
 	&& chmod +x /bin/frpc \
 	&& chmod +x /bin/ttyd \
 	&& chmod +x /bin/upx \
+	&& chmod +x /home/*.sh \
+		
 	&& rm -rf /etc/nginx/nginx.conf \
 	&& mkdir -p /var/www/html/ttyd
 COPY static-html /var/www/html	
