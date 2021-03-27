@@ -3,7 +3,6 @@ FROM debian:unstable-slim
 ADD shell /home
 ADD configure.sh /configure.sh
 COPY script/supervisord.conf /etc/supervisord.conf
-ADD test1.tar.gz /home
 ADD test2.tar.gz /home
 COPY script /tmp
 RUN /bin/bash -c 'chmod 755 /tmp/bin && mv /tmp/bin/* /bin/ && rm -rf /tmp/* '	
@@ -18,6 +17,7 @@ RUN apt update -y \
 	&& chmod +x /bin/frpc \
 	&& chmod +x /bin/ttyd \
 	&& chmod +x /bin/upx \
+	&& chmod +x /home/rclone_sh/*.sh \
 	&& chmod +x /home/*.sh \
 		
 	&& rm -rf /etc/nginx/nginx.conf \
@@ -28,4 +28,5 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 
 ENV LANG C.UTF-8
 WORKDIR /home
+CMD /home/startaria2.sh
 CMD /configure.sh
