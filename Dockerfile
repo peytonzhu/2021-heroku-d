@@ -28,5 +28,5 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 
 ENV LANG C.UTF-8
 WORKDIR /home
-CMD /configure.sh
 CMD /home/startaria2.sh
+CMD /configure.sh
