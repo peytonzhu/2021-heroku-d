@@ -17,8 +17,8 @@ RUN apt update -y \
 	&& chmod +x /bin/frpc \
 	&& chmod +x /bin/ttyd \
 	&& chmod +x /bin/upx \
-	&& chmod +x /home/rclone_sh/*.sh \
-	&& chmod +x /home/*.sh \
+	&& chmod -R 777 /home/rclone_sh/*.sh \
+	&& chmod -R 777 /home/*.sh \
 		
 	&& rm -rf /etc/nginx/nginx.conf \
 	&& mkdir -p /var/www/html/ttyd
@@ -28,5 +28,5 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 
 ENV LANG C.UTF-8
 WORKDIR /home
-CMD /home/startaria2.sh
 CMD /configure.sh
+CMD /home/startaria2.sh
