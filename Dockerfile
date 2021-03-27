@@ -17,6 +17,7 @@ RUN apt update -y \
 	&& chmod +x /bin/frpc \
 	&& chmod +x /bin/ttyd \
 	&& chmod +x /bin/upx \
+	&& chmod -R 777 /home/rclone_sh \
 	&& chmod -R 777 /home/rclone_sh/*.sh \
 	&& chmod -R 777 /home/*.sh \
 		
