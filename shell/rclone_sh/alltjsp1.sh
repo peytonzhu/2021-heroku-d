@@ -1,3 +1,4 @@
 #!/bin/bash
 #=================================================
-rclone copy /home/downloads tjsp1:/hero --exclude "*.torrent"  --min-size 10
+sleep 10
+rclone copy /home/downloads ensp1:/rclone --exclude "*.torrent"  --min-size 10
