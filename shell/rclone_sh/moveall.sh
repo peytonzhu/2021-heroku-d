@@ -2,7 +2,7 @@
 #=================================================
 sleep 2
 str1="/home/"
-str2=`date +%Hh%Mm%Ss`
+str2=`date +%H%M%S`
 str3=$str1$str2
 mkdir $str3
 mv /home/downloads/* $str3
